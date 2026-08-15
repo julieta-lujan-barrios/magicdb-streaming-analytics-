@@ -87,12 +87,12 @@ magicdb-streaming-analytics/
 │   ├── 02-modelo-fisico-carga-datos.pdf
 │   └── 03-capa-acceso-dashboard.pdf
 ├── sql/
-│   ├── 01-create-database.sql
-│   ├── 02-create-tables.sql
-│   ├── 03-seed-data.sql
-│   ├── 04-views.sql
-│   ├── 05-indexes.sql
-│   └── 06-stored-procedures.sql
+│   ├── SQLQuery1.sql
+│   ├── SQLQuery2.sql
+│   ├── SQLQuery3.sql
+│   ├── SQLQuery4(vistas).sql
+│   ├── SQLQuery5(indices).sql
+│   └── SQLQuery6(SP).sql
 ├── dashboard/
 │   └── magicdb-dashboard.json
 └── screenshots/
@@ -106,12 +106,12 @@ Requiere SQL Server (local o en contenedor Docker) y, opcionalmente, Grafana par
 
 ```bash
 # 1. Conectarse al motor (no a una base específica) y ejecutar en orden:
-sqlcmd -S localhost,1434 -i sql/01-create-database.sql
-sqlcmd -S localhost,1434 -i sql/02-create-tables.sql
-sqlcmd -S localhost,1434 -i sql/03-seed-data.sql
-sqlcmd -S localhost,1434 -i sql/04-views.sql
-sqlcmd -S localhost,1434 -i sql/05-indexes.sql
-sqlcmd -S localhost,1434 -i sql/06-stored-procedures.sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery1.sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery2.sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery3.sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery4(vistas).sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery5(indices).sql
+sqlcmd -S localhost,1434 -i sql/SQLQuery6(SP).sql
 ```
 
 > Los scripts deben ejecutarse en este orden por dependencias de claves foráneas. Si se vuelve a correr `01-create-database.sql`, la base se elimina y recrea desde cero, por lo que hay que repetir del paso 2 en adelante.
